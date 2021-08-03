@@ -1,0 +1,10 @@
+{
+  "name": "offline-serverless-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-deployment-bucket": "^1.5.1",
+    "serverless-localstack": "^0.4.32"
+  }
+}

@@ -1,0 +1,22 @@
+service: teste
+frameworkVersion: '2'
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  deploymentBucket:
+    name: ${self:service}-deployment-bucket
+    serverSideEncryption: AES256
+functions:
+  hello:
+    handler: handler.hello
+plugins:
+  - serverless-localstack
+  - serverless-deployment-bucket
+custom:
+  localstack:
+    debug: true
+    stages:
+     - local
+     - dev
+    endpointFile: localstack_endpoints.json
